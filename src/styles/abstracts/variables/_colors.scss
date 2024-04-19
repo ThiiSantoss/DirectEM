@@ -1,0 +1,42 @@
+//////////////////// COLORS ////////////////////
+$white-linen:     #f7efe3;
+$wild-sand:       #f4f4f4;
+$mercury:         #e7e7e7;
+$silver:          #c8c8c8;
+$gray:            #898989;
+$punch:           #dd393e;
+$brick-red:       #bf2d32;
+$roof-terracotta: #a01f23;
+$gondola:         #28161c;
+$malachite:       #02dd25;
+$turbo:           #F1DC21;
+$red:             #f30101;
+$transparent:     #ffffff00;
+
+//////////////////// STYLES ////////////////////
+$app-background: $mercury;
+
+$card-background: $wild-sand;
+$card-text-color: $gondola;
+
+$outline-button-background: $transparent;
+$outline-button-border:     $brick-red;
+$outline-button-text-color: $outline-button-border;
+
+$button-background:         $brick-red;
+$button-hover:              $punch;
+$button-active:             $roof-terracotta;
+$button-text-color:         $wild-sand;
+
+$radio-background:         $transparent;
+$radio-border:             $gondola;
+$radio-text-color:         $gondola;
+$radio-checked-background: $brick-red;
+$radio-checked-text-color: $wild-sand;
+
+$input-border:  $silver;
+$input-hover:   $gray;
+$input-active:  $gondola;
+$input-success: $malachite;
+$input-error:   $red;
+

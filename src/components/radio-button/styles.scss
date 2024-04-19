@@ -1,0 +1,36 @@
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + .radio-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    width: 160px;
+    padding: 4px 16px;
+
+    cursor: pointer;
+    border-radius: 32px;
+    border: 2px solid #28161c;
+
+    font-weight: 700;
+    color: #28161c;
+
+    transition: background-color 110ms;
+}
+
+input[type="radio"]:checked + .radio-button {
+    padding: 6px 18px;
+
+    cursor: default;
+    background-color: #bf2d32;
+    border: none;
+
+    color: #f4f4f4;
+
+    & path {
+        fill: #f4f4f4;
+    }
+}

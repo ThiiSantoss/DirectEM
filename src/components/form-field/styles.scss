@@ -1,0 +1,25 @@
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & ~ hr {
+        width: 100%;
+        border: 1px solid #e7e7e7;
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    &__name {
+        font-weight: 700;
+    }
+
+    &__hint{
+        font-weight: 500;
+        color: #898989;
+    }
+}
