@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <title>DIRECTEM | Triagem Inteligente</title>
+</head>
+<body>
+    <main>
+        <div>
+            <img class="logo" src="Imagem do WhatsApp de 2024-04-19 à(s) 23.55.06_f836846c.jpg" alt="">
+        </div>
+        <section class="patient-data">
+            <h1 class="patient-data__title">Dados do paciente</h1>
+            <p class="patient-data__description">
+                Insira os dados do paciente no formulário abaixo, esta etapa é crucial para receber um encaminhamento mais preciso.
+            </p>
+            <form class="patient-data-form">
+                <p class="patient-data-form__name">Sexo</p>
+                <input id="gender-m" class="patient-data-form__input" name="gender" type="radio" value="masculino" required checked />
+                <label for="gender-m" class="patient-data-form__label">Masculino</label>
+                <input id="gender-f" class="patient-data-form__input" name="gender" type="radio" value="feminino" required />
+                <label for="gender-f" class="patient-data-form__label">Feminino</label>
+                
+                <p class="patient-data-form__name">Idade</p>
+                <input id="age" class="patient-data-form__input" type="number" placeholder="XX" max="120" min="1" required />
+                <select id="age-unit" class="patient-data-form__input">
+                    <option value="anos">anos</option>
+                    <option value="meses">meses</option>
+                </select>
+                
+                <p class="patient-data-form__name">Gestante</p>
+                <input id="pregnancy-no" class="patient-data-form__input" name="pregnancy" type="radio" value="não" checked />
+                <label for="pregnancy-no" class="patient-data-form__label">Não</label>
+                <input id="pregnancy-yes" class="patient-data-form__input" name="pregnancy" type="radio" value="sim" />
+                <label for="pregnancy-yes" class="patient-data-form__label">Sim</label>
+                
+                <p id="gestational-age-title" class="patient-data-form__name">Idade Gestacional</p>
+                <input id="gestational-age" class="patient-data-form__input" type="number" placeholder="XX" min="1" max="42" value="0"/>
+                
+<p class="patient-data-form__name">Queixa Principal</p>
+                <textarea id="complaint" class="patient-data-form__input" required></textarea>
+                <button id="submit-btn" class="patient-data-form__button" type="button">
+                    Encaminhar paciente
+                </button>
+            </form>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#submit-btn").click(function() {
+                const complaint = $("#complaint").val();
+
+                // Faz uma solicitação AJAX para o servidor Node.js
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:3000/generate-response",
+                    data: JSON.stringify({ prompt: complaint }),
+                    contentType: "application/json",
+                    success: function(response) {
+                        // Atualiza a página com a resposta da IA
+                        alert(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                        alert("Erro ao processar a solicitação.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
