@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyAvbfFUAapwIUEFE1L3_U9cvbYIvWvBV9s';
+const API_KEY = ' ';
 
 const express = require("express");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
