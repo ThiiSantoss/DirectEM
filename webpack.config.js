@@ -13,9 +13,12 @@ export default {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: `${__dirname}/node_modules`,
+                exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader'
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react']
+                    }
                 }
             },
             {
@@ -33,7 +36,7 @@ export default {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: `${__dirname}/public/index.html`
+            template: './public/index.html' // Alterando o caminho do template para relativo
         })
     ],
     devServer: {
